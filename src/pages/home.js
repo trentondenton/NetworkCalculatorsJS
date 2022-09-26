@@ -63,7 +63,7 @@ export default class Home extends Component {
           <br />
           <Row className="myflex">
             <h1>Welcome to NTWK Dev!</h1>
-            <p>We will continue to add other networking resources as we further develop the platform. To stay informed of any new features, programs, or changes sign up for our newsletter!</p>
+            <p>We will continue to add other networking resources as we further develop the platform. Sign up for our newsletter to stay up to date with new features, blog posts, and website changes!</p>
             <Form fluid>
               <Form.Control type="email" name="email" placeholder="Email Address" onChange={this.handleChange} />
               <br />
