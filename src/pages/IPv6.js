@@ -66,7 +66,7 @@ export default class Ipv4 extends Component {
           </Form.Group>
           <Form.Group>
             <Form.Label>Subnet Mask</Form.Label>
-            <select
+            <Form.Select
               value={bitMask}
               onChange={this.onChangeMask}
               className="form-control"
@@ -103,7 +103,7 @@ export default class Ipv4 extends Component {
               <option value="30">255.255.255.252 /30</option>
               <option value="31">255.255.255.254 /31</option>
               <option value="32">255.255.255.255 /32</option>
-            </select>
+            </Form.Select>
           </Form.Group>
 
           <Form.Group>
@@ -114,6 +114,7 @@ export default class Ipv4 extends Component {
               size="30"
               readOnly
               className="form-control"
+              id="App-responsive"
             />
           </Form.Group>
 
@@ -125,6 +126,7 @@ export default class Ipv4 extends Component {
               size="20"
               readOnly
               className="form-control"
+              id="App-responsive"
             />
           </Form.Group>
 

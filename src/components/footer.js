@@ -15,18 +15,20 @@ export class Footer extends Component {
     )
     return (
       <Navbar bg="primary" variant="dark" label="Footer" className="footer" fixed="bottom">
-        <OverlayTrigger triggers="hover, focus" placement="top" overlay={popover}>
-          <Navbar.Brand>Follow Us!</Navbar.Brand>
-        </OverlayTrigger>
-        <Nav.Link href="https://www.linkedin.com/in/trentondenton/" target="_blank">
-          <Image className="myicon" alt="linkedin" src={LinkedIn} />
-        </Nav.Link>
-        <Nav.Link href="https://instagram.com/thetrentond" target="_blank">
-          <Image className="myicon" alt="instagram" src={Instagram} />
-        </Nav.Link>
-        <Nav.Link href="https://www.twitter.com/thetrentond/" target="_blank">
-          <Image className="myicon" alt="twitter" src={Twitter} />
-        </Nav.Link>
+        <Nav className="myflex">
+          <OverlayTrigger triggers="hover, focus" placement="top" overlay={popover}>
+            <Navbar.Brand>Follow Us!</Navbar.Brand>
+          </OverlayTrigger>
+          <Nav.Link href="https://www.linkedin.com/in/trentondenton/" target="_blank">
+            <Image className="myicon" alt="linkedin" src={LinkedIn} />
+          </Nav.Link>
+          <Nav.Link href="https://instagram.com/thetrentond" target="_blank">
+            <Image className="myicon" alt="instagram" src={Instagram} />
+          </Nav.Link>
+          <Nav.Link href="https://www.twitter.com/thetrentond/" target="_blank">
+            <Image className="myicon" alt="twitter" src={Twitter} />
+          </Nav.Link>
+        </Nav>
       </Navbar>
     )
   }
