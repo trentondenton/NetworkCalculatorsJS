@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Ipv4Calculator from '../components/ipv4calculator';
 import { Container, Form } from 'react-bootstrap';
 
+import Ipv4Match from '../components/ipv4match';
+import Ipv4Calculator from '../components/ipv4calculator';
 export default class Ipv4 extends Component {
   state = {
     ipaddress: '10.0.0.0',
@@ -17,11 +18,13 @@ export default class Ipv4 extends Component {
     const { bitMask } = this.state;
     if (event.target instanceof HTMLInputElement) {
       const ipaddress = event.target.value;
-      this.setState({ ipaddress });
-      this.handleSubnetCalc(ipaddress, bitMask);
-    } else {
-      this.setState({ ipaddress: '10.0.0.0' });
-      this.handleSubnetCalc('10.0.0.0', bitMask);
+      if (Ipv4Match(ipaddress)) {
+        this.setState({ ipaddress });
+        this.handleSubnetCalc(ipaddress, bitMask);
+      } else {
+        this.setState({ ipaddress: '10.0.0.0' });
+        this.handleSubnetCalc('10.0.0.0', bitMask);
+      }
     }
   };
 
@@ -43,7 +46,7 @@ export default class Ipv4 extends Component {
       wildcardMask: calc.result.wildcardMask,
       maxSubnets: calc.result.maxSubnets,
       maxHosts: calc.result.maxHosts,
-      networkRange: calc.result.networkRange,
+      networkRange: calc.result.networkAddressRange,
       network: calc.result.network,
     });
   };
@@ -56,9 +59,9 @@ export default class Ipv4 extends Component {
         <Form>
           <Form.Group>
             <Form.Label>IPv4 Address</Form.Label>
-            <input
+            <Form.Control as={"input"}
               type="text"
-              value={ipaddress}
+              value={ipaddress || ''}
               onChange={this.onChangeIP}
               maxLength="15"
               className="form-control"
@@ -66,8 +69,8 @@ export default class Ipv4 extends Component {
           </Form.Group>
           <Form.Group>
             <Form.Label>Subnet Mask</Form.Label>
-            <select
-              value={bitMask}
+            <Form.Control as="select"
+              value={bitMask || ''}
               onChange={this.onChangeMask}
               className="form-control"
             >
@@ -103,14 +106,14 @@ export default class Ipv4 extends Component {
               <option value="30">255.255.255.252 /30</option>
               <option value="31">255.255.255.254 /31</option>
               <option value="32">255.255.255.255 /32</option>
-            </select>
+            </Form.Control>
           </Form.Group>
 
           <Form.Group>
             <Form.Label>Network Address</Form.Label>
-            <input
+            <Form.Control as="input"
               type="text"
-              value={network}
+              value={network || ''}
               size="30"
               readOnly
               className="form-control"
@@ -119,7 +122,7 @@ export default class Ipv4 extends Component {
 
           <Form.Group>
             <Form.Label>Total Hosts</Form.Label>
-            <input
+            <Form.Control as="input"
               type="text"
               value={maxHosts}
               size="20"
@@ -130,21 +133,20 @@ export default class Ipv4 extends Component {
 
           <Form.Group>
             <Form.Label>Wildcard Mask</Form.Label>
-            <input
+            <Form.Control as="input"
               type="text"
-              value={wildcardMask}
+              value={wildcardMask || ''}
               size="20"
               readOnly
               className="form-control"
-              id="App-responsive"
             />
           </Form.Group>
 
           <Form.Group>
             <Form.Label>Possible Subnets</Form.Label>
-            <input
+            <Form.Control as="input"
               type="text"
-              value={maxSubnets}
+              value={maxSubnets || ''}
               className="form-control"
               readOnly
             />
@@ -152,9 +154,9 @@ export default class Ipv4 extends Component {
 
           <Form.Group>
             <Form.Label>Usable Range</Form.Label>
-            <input
+            <Form.Control as="input"
               type="text"
-              value={networkRange}
+              value={networkRange || ''}
               size="30"
               readOnly
               className="form-control"

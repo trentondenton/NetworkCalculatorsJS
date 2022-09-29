@@ -16,6 +16,9 @@ export class Footer extends Component {
     return (
       <Navbar bg="primary" variant="dark" label="Footer" className="footer" fixed="bottom">
         <Nav className="myflex">
+          <Navbar.Brand>&copy; TDenton 2022</Navbar.Brand>
+        </Nav>
+        <Nav className="myflex">
           <OverlayTrigger triggers="hover, focus" placement="top" overlay={popover}>
             <Navbar.Brand>Follow Us!</Navbar.Brand>
           </OverlayTrigger>

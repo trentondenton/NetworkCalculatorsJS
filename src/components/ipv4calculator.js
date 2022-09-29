@@ -319,19 +319,23 @@ class Ipv4Calculator {
     const endAddressNumberArray = broadcastArray;
 
     endAddressNumberArray[3] -= 1;
-    // Convert to String
-    for (let index = 0; index < networkArray.length; index += 1) {
-      const startOctet = startAddressNumberArray[index];
-      const endOctet = endAddressNumberArray[index];
 
-      startAddressArray[index] = startOctet.toString(10);
-      endAddressArray[index] = endOctet.toString(10);
+    // Convert to String
+    for (let i = 0; i < networkArray.length; i++) {
+      let startOctet = startAddressNumberArray[i];
+      let endOctet = endAddressNumberArray[i];
+
+      startAddressArray[i] = startOctet.toString(10);
+      endAddressArray[i] = endOctet.toString(10);
     }
-    const startAddress = startAddressArray.join('.');
-    const endAddress = endAddressArray.join('.');
+    let startAddress = startAddressArray.join('.');
+    let endAddress = endAddressArray.join('.');
+
     // Assign IP Range
     this.result.networkAddressRange = `${startAddress} - ${endAddress}`;
+    console.log('IP Range', this.result.networkAddressRange);
   }
+
 }
 
 export default Ipv4Calculator;
