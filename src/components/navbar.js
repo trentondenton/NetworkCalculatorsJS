@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useLocation } from "react-router-dom";
-import { Navbar as NavBar, Nav, NavDropdown, Container, Button, Dropdown } from 'react-bootstrap';
+import { Navbar as NavBar, Nav } from 'react-bootstrap';
 
 export function Navbar() {
   const location = useLocation();

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, Button, Image, OverlayTrigger, Popover, Overlay } from 'react-bootstrap';
+import { Navbar, Nav, Image, OverlayTrigger, Popover } from 'react-bootstrap';
 
 import LinkedIn from '../assets/icons/LinkedIn.png';
 import Instagram from '../assets/icons/Instagram.png';
