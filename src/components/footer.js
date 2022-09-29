@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, Button, Image, OverlayTrigger, Popover, Overlay } from 'react-bootstrap';
 
-import LinkedIn from '../../static/assets/icons/LinkedIn.png';
-import Instagram from '../../static/assets/icons/Instagram.png';
-import Twitter from '../../static/assets/icons/Twitter.png';
+import LinkedIn from '../assets/icons/LinkedIn.png';
+import Instagram from '../assets/icons/Instagram.png';
+import Twitter from '../assets/icons/Twitter.png';
 
 export class Footer extends Component {
   render() {

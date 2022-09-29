@@ -1,3 +1,6 @@
 {
-  "dotenv.enableAutocloaking": true
+  "search.exclude": {
+    "**/node_modules": false
+  },
+  "search.useIgnoreFiles": false
 }

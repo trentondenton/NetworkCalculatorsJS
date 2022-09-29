@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Spinner, Container, Form, Row, Col as Column, Button, Toast, Carousel, Image } from 'react-bootstrap';
 
-import Tired from '../../static/assets/images/sleeping_laptop.png'
-import Coffee from '../../static/assets/images/sitting_coffee_laptop.png'
-import Thinking from '../../static/assets/images/sitting_thinking.png'
+import Tired from '../assets/images/sleeping_laptop.png'
+import Coffee from '../assets/images/sitting_coffee_laptop.png'
+import Thinking from '../assets/images/sitting_thinking.png'
 export default class Home extends Component {
   constructor() {
     super()
@@ -51,7 +51,7 @@ export default class Home extends Component {
                 <Toast.Body>Please enter an email address.</Toast.Body>
               </Toast>
               :
-              <Toast bg="primary" role="alert" style={{ position: "absolute", top: "1rem", right: "1rem" }} delay={3000} aria-hidden="true" onClose={this.handleToastClick} autohide>
+              <Toast bg="light" role="alert" style={{ position: "absolute", top: "1rem", right: "1rem" }} delay={3000} aria-hidden="true" onClose={this.handleToastClick} autohide>
                 <Toast.Header>
                   <strong className="mr-auto">NTWK Dev</strong>
                   <small>📧</small>
@@ -65,7 +65,7 @@ export default class Home extends Component {
             <h1>Welcome to NTWK Dev!</h1>
             <p>We will continue to add other networking resources as we further develop the platform. Sign up for our newsletter to stay up to date with new features, blog posts, and website changes!</p>
             <Form fluid>
-              <Form.Control type="email" name="email" placeholder="Email Address" onChange={this.handleChange} />
+              <Form.Control role="email" type="email" name="email" placeholder="Email Address" onChange={this.handleChange} />
               <br />
               <Button variant="primary" onClick={this.handleToastClick}>Sign up!</Button>
             </Form>
